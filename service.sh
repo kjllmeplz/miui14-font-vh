@@ -1,0 +1,1 @@
+mount --bind "${0%/*}/fonts/MiSansVF.ttf" /system/fonts/MiSansVF.ttf

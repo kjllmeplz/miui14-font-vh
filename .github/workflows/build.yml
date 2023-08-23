@@ -33,7 +33,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{steps.version.outputs.prop}}
           name: ${{steps.version.outputs.prop}}
-          file: ${{ github.event.repository.name }}.zip
+          files: ${{ github.event.repository.name }}.zip
           gzip: false
           draft: false
           prerelease: false

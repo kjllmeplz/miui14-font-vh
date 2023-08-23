@@ -14,8 +14,8 @@ jobs:
         id: version
         uses: notiz-dev/github-action-json-property@release
         with: 
-            path: 'module.json'
-            prop_path: 'version'
+          path: 'module.json'
+          prop_path: 'version'
 
       - name: Set version in module.prop
         run: |

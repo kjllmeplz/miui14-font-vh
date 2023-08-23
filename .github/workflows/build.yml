@@ -1,5 +1,7 @@
 name: Build ZIP file
-on: [workflow_call, workflow_dispatch]
+on:
+  push:
+  pull_request:
 
 jobs:
   build_zip:
@@ -26,3 +28,6 @@ jobs:
           name: miui14-font-vh
           path: ./miui14-font-vh.zip
         if: github.ref_name == 'main'
+
+      
+    

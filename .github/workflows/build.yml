@@ -28,16 +28,14 @@ jobs:
           zip -r ${{ github.event.repository.name }}.zip ./* -x module.json
 
       - name: Upload modules to release
-        uses: meeDamian/github-release@2.0
+        uses: svenstaro/upload-release-action@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{steps.version.outputs.prop}}
-          name: ${{steps.version.outputs.prop}}
-          files: ${{ github.event.repository.name }}.zip
-          gzip: false
-          draft: false
-          prerelease: false
-          allow_override: true
+          release_name: ${{steps.version.outputs.prop}}
+          file: ${{ github.event.repository.name }}.zip
+          file_glob: true
+          overwrite: true
 
       - name: Cleanup module zip
         run:  |

@@ -28,7 +28,7 @@ jobs:
           zip -r ${{ github.event.repository.name }}.zip ./* -x module.json
 
       - name: Upload modules to release
-        uses: actions/upload-release-action@3
+        uses: meeDamian/github-release@2.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{steps.version.outputs.prop}}
